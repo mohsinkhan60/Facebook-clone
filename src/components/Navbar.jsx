@@ -16,7 +16,7 @@ const Navbar = () => {
   const [activeTab, setActiveTab] = useState('home')
   
   return (
-    <nav className="sticky top-0 z-50 w-full bg-white border-b shadow-sm">
+    <nav className=" fixed top-0 z-50 w-full bg-white border-b shadow-sm">
       <div className="flex items-center justify-between h-14 px-2 mx-auto max-w-screen-2xl md:px-4">
         {/* Left section */}
         <div className="flex items-center flex-1 gap-2">

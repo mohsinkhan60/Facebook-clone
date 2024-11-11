@@ -6,13 +6,19 @@ import LeftSidebar from "../components/LeftSidebar";
 const RootLayout = () => {
   return (
     <div className="flex-col flex ">
-      <div>
+      <div className="fixed">
         <Navbar />
       </div>
-      <div className="flex ">
-        <LeftSidebar  />
-        <Outlet />
-        <RightSidebar />
+      <div className="flex mt-[57px] bg-[#F2F4F7]  overflow-auto touch-none">
+        <div className="flex-[.4] hidden md:flex">
+          <LeftSidebar />
+        </div>
+        <div className="flex-1 bg-orange-200">
+          <Outlet />
+        </div>
+        <div className="flex-[.4] hidden md:flex">
+          <RightSidebar />
+        </div>
       </div>
     </div>
   );
