@@ -41,7 +41,7 @@ const Navbar = () => {
         <div className="absolute left-1/2 transform -translate-x-1/2 items-center hidden md:flex md:space-x-20">
           <button
             onClick={() => setActiveTab('home')}
-            className={`p-2 hover:bg-gray-100 rounded-lg relative ${activeTab === 'home' ? 'text-blue-500' : 'text-gray-700'}`}
+            className={`p-2 hover:bg-gray-100 rounded-lg relative ${activeTab === 'home' ? 'text-blue-500' : 'text-gray-500'}`}
           >
             <Home className="w-6 h-6 md:w-7 md:h-7" />
             {activeTab === 'home' && (
@@ -51,7 +51,7 @@ const Navbar = () => {
 
           <button
             onClick={() => setActiveTab('marketplace')}
-            className={`p-2 hover:bg-gray-100 rounded-lg relative ${activeTab === 'marketplace' ? 'text-blue-500' : 'text-gray-700'}`}
+            className={`p-2 hover:bg-gray-100 rounded-lg relative ${activeTab === 'marketplace' ? 'text-blue-500' : 'text-gray-500'}`}
           >
             <SlFlag className="w-6 h-6 md:w-7 md:h-7" />
             {activeTab === 'marketplace' && (
@@ -60,7 +60,7 @@ const Navbar = () => {
           </button>
           <button
             onClick={() => setActiveTab('video')}
-            className={`p-2 hover:bg-gray-100 rounded-lg relative ${activeTab === 'video' ? 'text-blue-500' : 'text-gray-700'}`}
+            className={`p-2 hover:bg-gray-100 rounded-lg relative ${activeTab === 'video' ? 'text-blue-500' : 'text-gray-500'}`}
           >
             <MdOutlineOndemandVideo className="w-6 h-6 md:w-7 md:h-7" />
             {activeTab === 'video' && (
@@ -69,7 +69,7 @@ const Navbar = () => {
           </button>
           <button
             onClick={() => setActiveTab('shop')}
-            className={`p-2 hover:bg-gray-100 rounded-lg relative ${activeTab === 'shop' ? 'text-blue-500' : 'text-gray-700'}`}
+            className={`p-2 hover:bg-gray-100 rounded-lg relative ${activeTab === 'shop' ? 'text-blue-500' : 'text-gray-500'}`}
           >
             <LuShoppingBag className="w-6 h-6 md:w-7 md:h-7" />
             {activeTab === 'shop' && (
@@ -78,7 +78,7 @@ const Navbar = () => {
           </button>
           <button
             onClick={() => setActiveTab('groups')}
-            className={`p-2 hover:bg-gray-100 rounded-lg relative ${activeTab === 'groups' ? 'text-blue-500' : 'text-gray-700'}`}
+            className={`p-2 hover:bg-gray-100 rounded-lg relative ${activeTab === 'groups' ? 'text-blue-500' : 'text-gray-500'}`}
           >
             <HiUserGroup className="w-6 h-6 md:w-7 md:h-7" />
             {activeTab === 'groups' && (

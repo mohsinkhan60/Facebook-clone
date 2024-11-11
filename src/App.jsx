@@ -1,11 +1,18 @@
-import Navbar from "./components/Navbar"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import RootLayout from "./layout/RootLayout"
 
 
 const App = () => {
   return (
-    <div>
-      <Navbar />
-    </div>
+
+      <BrowserRouter>
+      <Routes>
+        {/* Root Routes */}
+        <Route path="/" element={<RootLayout />}>
+        </Route>
+
+      </Routes>
+    </BrowserRouter>
   )
 }
 export default App
