@@ -13,10 +13,10 @@ const RootLayout = () => {
         <div className="flex-[.4] hidden md:flex">
           <LeftSidebar />
         </div>
-        <div className="flex-1 bg-orange-200">
+        <div className="flex-1">
           <Outlet />
         </div>
-        <div className="flex-[.4] hidden md:flex">
+        <div className="flex-[.4] hidden bg-orange-200 md:flex">
           <RightSidebar />
         </div>
       </div>
