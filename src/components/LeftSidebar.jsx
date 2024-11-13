@@ -4,7 +4,8 @@ import { ChevronDown, Clock, Flag, Home, PlayCircle, ShoppingBag, Star, Users, V
 
 const LeftSidebar = () => {
   return (
-    <div className="w-full h-screen py-7 px-3 flex flex-col overflow-y-auto">
+    <div className='fixed '>
+    <div className="w-[350px] h-screen py-7 px-3 flex flex-col overflow-y-auto scrollbar-hide">
       <div className="flex items-center space-x-3 mb-6">
         <img
           src="/profilePic.jpg"
@@ -24,8 +25,18 @@ const LeftSidebar = () => {
         <SidebarItem icon={<Home className="w-7 h-7 text-blue-500" />} text="Feeds" />
         <SidebarItem icon={<Star className="w-7 h-7 text-red-500" />} text="Events" />
         <SidebarItem icon={<PlayCircle className="w-7 h-7 text-blue-500" />} text="Ads Manager" />
+        <SidebarItem icon={<ChevronDown className="w-7 h-7 p-1 bg-gray-300 rounded-full" />} text="See more" /> <SidebarItem icon={<Users className="w-7 h-7" />} text="Friends" badge="(136 online)" />
+        <SidebarItem icon={<Clock className="w-7 h-7" />} text="Memories" />
+        <SidebarItem icon={<Flag className="w-7 h-7 text-purple-500" />} text="Saved" />
+        <SidebarItem icon={<Users className="w-7 h-7 text-blue-500" />} text="Groups" />
+        <SidebarItem icon={<Video className="w-7 h-7 text-blue-500" />} text="Video" />
+        <SidebarItem icon={<ShoppingBag className="w-7 h-7 text-blue-500" />} text="Marketplace" />
+        <SidebarItem icon={<Home className="w-7 h-7 text-blue-500" />} text="Feeds" />
+        <SidebarItem icon={<Star className="w-7 h-7 text-red-500" />} text="Events" />
+        <SidebarItem icon={<PlayCircle className="w-7 h-7 text-blue-500" />} text="Ads Manager" />
         <SidebarItem icon={<ChevronDown className="w-7 h-7 p-1 bg-gray-300 rounded-full" />} text="See more" />
       </nav>
+    </div>
     </div>
   )
 }

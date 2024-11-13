@@ -1,7 +1,4 @@
 
-
-'use client'
-
 import { Image, Smile, Video } from "lucide-react"
 const Header = () => {
 

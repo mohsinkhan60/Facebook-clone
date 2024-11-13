@@ -11,10 +11,16 @@ const RightSidebar = () => {
     { id: 7, name: "Raja Abdullah", online: true },
     { id: 8, name: "Zain Khan", online: true },
     { id: 9, name: "Uzair Mughal", online: true },
+    { id: 5, name: "Wali Khan", online: true },
+    { id: 6, name: "Zahir Khan", online: true },
+    { id: 7, name: "Raja Abdullah", online: true },
+    { id: 8, name: "Zain Khan", online: true },
+    { id: 9, name: "Uzair Mughal", online: true },
   ]
 
   return (
-    <div className="w-full max-w-xs bg-transparent">
+    <div className="fixed">
+    <div className="w-full max-w-xs bg-transparent h-screen flex flex-col overflow-y-auto scrollbar-hide">
       {/* Birthdays Section */}
       <div className="p-4 border-b">
         <p className="text-gray-500 text-lg font-semibold py-2">Birthdays</p>
@@ -66,6 +72,7 @@ const RightSidebar = () => {
             </div>
           ))}
         </div>
+      </div>
       </div>
     </div>
   )

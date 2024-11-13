@@ -1,5 +1,6 @@
 import Header from "../Home/Header"
 import Stories from "../Home/Stories"
+import UploadPic from "../Home/UploadPic"
 
 
 const Home = () => {
@@ -7,6 +8,7 @@ const Home = () => {
     <div>
       <Header />
       <Stories />
+      <UploadPic />
     </div>
   )
 }

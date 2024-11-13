@@ -6,7 +6,7 @@ import LeftSidebar from "../components/LeftSidebar";
 const RootLayout = () => {
   return (
     <div className="flex-col flex ">
-      <div className="fixed">
+      <div className="fixed z-50">
         <Navbar />
       </div>
       <div className="flex mt-[57px] bg-[#F2F4F7]  overflow-auto touch-none">
