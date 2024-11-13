@@ -16,7 +16,7 @@ const RootLayout = () => {
         <div className="flex-1">
           <Outlet />
         </div>
-        <div className="flex-[.4] hidden bg-orange-200 md:flex">
+        <div className="flex-[.4] hidden md:flex">
           <RightSidebar />
         </div>
       </div>
