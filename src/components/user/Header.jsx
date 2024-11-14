@@ -1,11 +1,23 @@
 
-import { ChevronDown, MoreHorizontal } from 'lucide-react'
+import { Camera, ChevronDown, MoreHorizontal } from 'lucide-react'
 
 const Header = () => {
 
   return (
-    <div className="w-full md:mt-[121px] mt-[55px] bg-white">
+    <div className="w-full md:mt-[55px] mt-[55px] bg-white">
       <div className="max-w-6xl mx-auto">
+                 {/* Cover Photo */}
+        <div className="relative h-[30rem] bg-gray-300 rounded-b-lg overflow-hidden">
+          <img
+            src="/background.jpg"
+            alt="Cover"
+            className="w-full h-full object-cover"
+          />
+          <button className="absolute bottom-4 right-4 flex items-center px-4 py-2 bg-white rounded-md shadow">
+            <Camera className="w-5 h-5 mr-2" />
+            <span className="font-semibold">Edit cover photo</span>
+          </button>
+        </div>
 
         {/* Profile Section */}
         <div className="relative px-4 sm:px-6 lg:px-8">
