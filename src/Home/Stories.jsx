@@ -21,28 +21,15 @@ const Stories = () => {
     updateScrollButtons();
   }, []);
 
-  const scrollRight = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: 150, behavior: "smooth" });
-      updateScrollButtons();
-    }
-  };
-
-  const scrollLeft = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: -150, behavior: "smooth" });
-      updateScrollButtons();
-    }
-  };
 
   return (
-    <div className="flex items-center justify-center md:mr-4">
-    <div className="container py-7 px-3 flex flex-col overflow-y-auto max-w-[375px] md:max-w-[672px] mx-auto space-y-4">
+    <div className="flex items-center justify-center">
+    <div className="container py-7  flex flex-col overflow-y-auto max-w-[375px] md:max-w-[655px] mx-auto space-y-4">
       <div className="relative">
         {/* Left Scroll Button */}
         {canScrollLeft && (
           <button
-            onClick={scrollLeft}
+            onClick={() => scrollRef.current.scrollBy({ left: -150, behavior: "smooth" })}
             className="absolute left-1 top-1/2 z-50 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
             <ChevronLeft className="w-6 h-6" />
@@ -110,7 +97,7 @@ const Stories = () => {
         {/* Right Scroll Button */}
         {canScrollRight && (
           <button
-            onClick={scrollRight}
+            onClick={() => scrollRef.current.scrollBy({ left: 150, behavior: "smooth" })}
             className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
             <ChevronRight className="w-6 h-6" />

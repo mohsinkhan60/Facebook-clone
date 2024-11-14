@@ -25,15 +25,6 @@ const LeftSidebar = () => {
         <SidebarItem icon={<Home className="w-7 h-7 text-blue-500" />} text="Feeds" />
         <SidebarItem icon={<Star className="w-7 h-7 text-red-500" />} text="Events" />
         <SidebarItem icon={<PlayCircle className="w-7 h-7 text-blue-500" />} text="Ads Manager" />
-        <SidebarItem icon={<ChevronDown className="w-7 h-7 p-1 bg-gray-300 rounded-full" />} text="See more" /> <SidebarItem icon={<Users className="w-7 h-7" />} text="Friends" badge="(136 online)" />
-        <SidebarItem icon={<Clock className="w-7 h-7" />} text="Memories" />
-        <SidebarItem icon={<Flag className="w-7 h-7 text-purple-500" />} text="Saved" />
-        <SidebarItem icon={<Users className="w-7 h-7 text-blue-500" />} text="Groups" />
-        <SidebarItem icon={<Video className="w-7 h-7 text-blue-500" />} text="Video" />
-        <SidebarItem icon={<ShoppingBag className="w-7 h-7 text-blue-500" />} text="Marketplace" />
-        <SidebarItem icon={<Home className="w-7 h-7 text-blue-500" />} text="Feeds" />
-        <SidebarItem icon={<Star className="w-7 h-7 text-red-500" />} text="Events" />
-        <SidebarItem icon={<PlayCircle className="w-7 h-7 text-blue-500" />} text="Ads Manager" />
         <SidebarItem icon={<ChevronDown className="w-7 h-7 p-1 bg-gray-300 rounded-full" />} text="See more" />
       </nav>
     </div>
