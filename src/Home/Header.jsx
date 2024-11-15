@@ -1,4 +1,3 @@
-// Header.jsx
 import { Image, Smile, Video } from 'lucide-react';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
@@ -30,33 +29,22 @@ const Header = () => {
         <div className="flex items-center justify-between pt-2 border-t">
           <button className="flex items-center space-x-2 p-2 hover:bg-gray-100 rounded-lg flex-1">
             <Video className="w-6 h-6 text-red-500" />
-            <span className="text-gray-600 hidden md:flex font-medium">
-              Live video
-            </span>
-            <span className="text-gray-600 md:hidden flex font-medium">
-              Live
-            </span>
+            <span className="text-gray-600 hidden md:flex font-medium">Live video</span>
+            <span className="text-gray-600 md:hidden flex font-medium">Live</span>
           </button>
           <button className="flex items-center space-x-2 p-2 hover:bg-gray-100 rounded-lg flex-1">
             <Image className="w-6 h-6 text-green-500" />
-            <span className="text-gray-600 hidden md:flex font-medium">
-              Photo/video
-            </span>
-            <span className="text-gray-600 md:hidden flex font-medium">
-              Photo/video
-            </span>
+            <span className="text-gray-600 hidden md:flex font-medium">Photo/video</span>
+            <span className="text-gray-600 md:hidden flex font-medium">Photo/video</span>
           </button>
           <button className="flex items-center space-x-2 p-2 hover:bg-gray-100 rounded-lg flex-1">
             <Smile className="w-6 h-6 text-yellow-500" />
-            <span className="text-gray-600 hidden md:flex font-medium">
-              Feeling/activity
-            </span>
-            <span className="text-gray-600 md:hidden flex font-medium">
-              Feeling
-            </span>
+            <span className="text-gray-600 hidden md:flex font-medium">Feeling/activity</span>
+            <span className="text-gray-600 md:hidden flex font-medium">Feeling</span>
           </button>
         </div>
       </div>
+
       {/* Render Createpost Component */}
       <Createpost isModel={isModel} setIsModel={setIsModel} />
     </div>

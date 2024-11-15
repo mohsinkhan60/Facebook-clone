@@ -1,17 +1,59 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-// Createpost.jsx
-
-import { useState } from 'react';
-import { X, Image, Users, Smile, MapPin, Gift, MoreHorizontal } from 'lucide-react';
+import { useState } from "react";
+import {
+  X,
+  Image,
+  Users,
+  Smile,
+  MapPin,
+  Gift,
+  MoreHorizontal,
+  Plus,
+} from "lucide-react";
 
 const Createpost = ({ setIsModel, isModel }) => {
-  const [postText, setPostText] = useState('');
+  const [postText, setPostText] = useState("");
+  const [isDragging, setIsDragging] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   if (!isModel) return null;
 
+  const handleDragEnter = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsDragging(true);
+  };
+
+  const handleDragLeave = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsDragging(false);
+  };
+
+  const handleDragOver = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+  };
+
+  const handleDrop = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsDragging(false);
+    const files = Array.from(e.dataTransfer.files);
+    if (files.length > 0) {
+      console.log("Dropped files:", files);
+    }
+  };
+
+  const handleFileSelect = (e) => {
+    const files = Array.from(e.target.files);
+    if (files.length > 0) {
+      console.log("Selected files:", files);
+    }
+  };
+
   return (
-   <div >
     <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center">
       <div className="bg-white rounded-lg shadow-lg w-full max-w-lg relative p-4">
         {/* Header */}
@@ -48,15 +90,52 @@ const Createpost = ({ setIsModel, isModel }) => {
           </div>
         </div>
 
-        {/* Post Input */}
-        <div className="pb-4">
-          <textarea
-            placeholder="What's on your mind, Mohsin?"
-            value={postText}
-            onChange={(e) => setPostText(e.target.value)}
-            className="w-full min-h-[100px] text-lg resize-none border-none focus:ring-0 focus:outline-none"
-          />
-        </div>
+        {/* File Upload */}
+        {isOpen === true ? (
+          <div
+            className={`flex relative flex-col items-center justify-center border m-2 p-12 space-y-4 transition-colors rounded-lg ${
+              isDragging ? "bg-gray-50" : "bg-white"
+            }`}
+            onDragEnter={handleDragEnter}
+            onDragLeave={handleDragLeave}
+            onDragOver={handleDragOver}
+            onDrop={handleDrop}
+          >
+            {" "}
+            <button
+              onClick={() => setIsOpen(false)}
+              className="absolute right-4 top-4 text-gray-500 hover:text-gray-700 transition-colors"
+            >
+              <X className="h-5 w-5" />
+              <span className="sr-only">Close</span>
+            </button>
+            <div className="relative">
+              <input
+                type="file"
+                multiple
+                accept="image/*,video/*"
+                className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                onChange={handleFileSelect}
+              />
+              <div className="rounded-full bg-gray-100 p-3">
+                <Plus className="h-6 w-6 text-gray-600" />
+              </div>
+            </div>
+            <div className="text-center">
+              <h3 className="text-xl font-semibold mb-1">Add photos/videos</h3>
+              <p className="text-sm text-gray-500">or drag and drop</p>
+            </div>
+          </div>
+        ) : (
+          <div className="pb-4">
+            <textarea
+              placeholder="What's on your mind, Mohsin?"
+              value={postText}
+              onChange={(e) => setPostText(e.target.value)}
+              className="w-full min-h-[100px] text-lg resize-none border-none focus:ring-0 focus:outline-none"
+            />
+          </div>
+        )}
 
         {/* Background Selector */}
         <div className="flex items-center space-x-2 mb-4">
@@ -76,7 +155,10 @@ const Createpost = ({ setIsModel, isModel }) => {
             <span className="font-semibold">Add to your post</span>
             <div className="flex space-x-1">
               <button className="p-2 hover:bg-gray-100 rounded-full">
-                <Image className="w-6 h-6 text-green-500" />
+                <Image
+                  onClick={() => setIsOpen(true)}
+                  className="w-6 h-6 text-green-500"
+                />
               </button>
               <button className="p-2 hover:bg-gray-100 rounded-full">
                 <Users className="w-6 h-6 text-blue-500" />
@@ -107,7 +189,6 @@ const Createpost = ({ setIsModel, isModel }) => {
           </button>
         </div>
       </div>
-    </div>
     </div>
   );
 };
