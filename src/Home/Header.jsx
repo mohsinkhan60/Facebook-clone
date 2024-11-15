@@ -1,7 +1,12 @@
-import { Image, Smile, Video } from "lucide-react";
-import { NavLink } from "react-router-dom";
+// Header.jsx
+import { Image, Smile, Video } from 'lucide-react';
+import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import Createpost from '../pages/Createpost';
 
 const Header = () => {
+  const [isModel, setIsModel] = useState(false);
+
   return (
     <div className="max-w-2xl container mx-auto p-4 space-y-4">
       {/* Status Input Section */}
@@ -15,9 +20,10 @@ const Header = () => {
             />
           </NavLink>
           <input
+            onClick={() => setIsModel(true)}
             type="text"
             placeholder="What's on your mind?"
-            className="bg-gray-100 rounded-full py-2 px-4 w-full hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="bg-gray-100 rounded-full py-2 px-4 w-full hover:bg-gray-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
 
@@ -51,6 +57,8 @@ const Header = () => {
           </button>
         </div>
       </div>
+      {/* Render Createpost Component */}
+      <Createpost isModel={isModel} setIsModel={setIsModel} />
     </div>
   );
 };

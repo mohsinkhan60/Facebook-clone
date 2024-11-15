@@ -3,6 +3,7 @@ import RootLayout from "./layout/RootLayout"
 import UserProfileLayout from "./layout/UserProfileLayout"
 import Home from "./pages/Home"
 import UserProfile from "./pages/UserProfile"
+import Createpost from "./pages/Createpost"
 
 
 const App = () => {
@@ -19,7 +20,7 @@ const App = () => {
         <Route path="/user" element={<UserProfileLayout />}>
         <Route index element={<UserProfile />} />
         </Route>
-        
+        <Route path="/createpost" element={<Createpost />} />
 
       </Routes>
     </BrowserRouter>
